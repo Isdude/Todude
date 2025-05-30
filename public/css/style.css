@@ -1,0 +1,406 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    padding: 30px;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    background-color: #fffdf7;
+}
+.container{
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between items */
+    align-items: stretch; /* Stretch items to full height */
+    max-width: 1200px; /* Max width of the container */
+    margin: 0 auto; /* Center the container */
+}
+.sidebar {
+  width: 290px; /* Set the width of the sidebar */
+  background-color: #fcfaf8; /* Light background color */
+  padding: 20px; /* Padding inside the sidebar */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  height: 100%; /* Full height */
+  position: fixed;
+  top: 0; /* Stick to the top */
+  left: 0; /* Stick to the left */
+}
+.sidebar-nav button {
+  width: 100%; /* Full width buttons */
+  padding: 10px 0px; /* Padding around the text */
+  margin: 7px 0; /* Spacing between buttons */
+  background-color: #fcfaf8;
+  border: 1px solid #fcfaf8; /* Light border */
+  color: #000000; /* Dark text color */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between icon and text */
+
+}
+a {
+    text-decoration: none; /* Remove underline */
+}
+.sidebar-nav button:hover {
+  background-color: #fcfaf8;
+  opacity: 0.6; /* Slightly transparent on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    color: #000000; /* Dark text color on hover */
+
+
+}
+.sidebar-nav svg {
+  width: 24px;
+  height: 24px;
+  stroke: #4b5563; /* abu gelap */
+  transition: stroke 0.2s ease;
+}
+
+
+
+h1 {
+    text-align: center;
+    color: #620c0c;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 40px;
+}
+h3 {
+    text-align: center;
+    color: #620c0c;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.todo-item {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    background-color: #fdfdfd;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+.todo-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    background-color: #fdfdfd;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.todo-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.todo-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+
+}
+.todo-list-completed li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+
+}
+
+.todo-list form {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.todo-list input[type="checkbox"] {
+    transform: scale(1.2);
+    cursor: pointer;
+
+}
+
+.todo-list input[type="checkbox"]:hover {
+    background-color: #0072cf;
+
+}
+
+.button-dlt {
+    background-color: #ff5c5c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+.button-edit {
+    background-color: #2f36fe;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+.task-title {
+    font-size: 1.1rem;
+}
+
+.task-info {
+    color: #ffffff;
+}
+.priority-1 {
+    background-color: #ff1100; /* merah */
+    color: white;
+}
+.priority-1:hover{
+    background-color: #c70e01;
+}
+
+.priority-2 {
+    background-color: #ff9800; /* oranye */
+    color: white;
+}
+
+.priority-2:hover{
+    background-color: #d47f00;
+}
+.priority-3 {
+    background-color: #2196f3; /* biru */
+    color: white;
+}
+.priority-3:hover{
+    background-color: #0072cf;
+}
+
+li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    list-style: none;
+}
+
+.notification .badge {
+    position: absolute;
+    margin-left: 225px;
+    bottom: 17px;
+    border-radius: 50%;
+    background-color:#fcfaf8;
+    color: #620c0c;
+  }
+  .notification {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    border-radius: 2px;
+  }
+  .empty{
+    color: #620c0c;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 20px;
+  }
+
+.logout{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: #fcfaf8;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+.logout {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* jarak antara ikon dan teks */
+  cursor: pointer;
+  font-size: 16px;
+  padding: 8px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 5px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  gap: 15px;
+}
+
+.user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #620c0c;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user-name {
+  font-size: 15px;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  font-weight: 600;
+  margin: 0;
+  color: #000000;
+}
+
+.user-email {
+  font-size: 12px;
+  margin: 4px 0 0;
+  color: #7f8c8d;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: large;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Edit Button Style */
+/* Flex container for buttons */
+.action-buttons {
+    display: flex;
+    gap: 10px; /* space between buttons */
+    margin-top: 10px;
+}
+
+/* Reuse previous button styles */
+.btn-edit, .cancelbtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn-edit {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #45a049;
+}
+
+.cancelbtn {
+    background-color: #f44336;
+    color: white;
+}
+
+.cancelbtn:hover {
+    background-color: #da190b;
+}
+
+
+/* Set a style for all buttons */
+
+/* Extra styles for the cancel button */
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 20%;
+  border-radius: 50%;
+}
+
+.user-edit {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: absolute; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height:100%; /* Full height */
+  overflow: hidden;
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 3px solid #620c0c;
+  border-radius: 10px;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+
