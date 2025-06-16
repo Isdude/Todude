@@ -108,5 +108,6 @@
         <!-- Submit Button -->
         <button type="submit" class="save-btn">Save Changes</button>
     </form>
+    <a href="{{ route('todos.index') }}" style="text-decoration:none;">← Back to List</a>
 </div>
 

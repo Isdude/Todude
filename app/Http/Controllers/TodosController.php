@@ -34,25 +34,13 @@ class TodosController extends Controller
         Todo::create($validated);
         return redirect()->route('todos.index');
     }
-
-
-
-    public function destroy(string $id)
-    {
-        $todo = Todo::find($id);
-        $todo->status = true;
-        $todo->save();
-
-        return redirect()->route('todos.index');
-    }
-
-    public function edit($userId)
+    public function edit($userId)// Edit user details
     {
         $user = User::findOrFail($userId);
         return view('todos.user_edit', compact('user'));
     }
 
-    public function update(Request $request, $userId)
+    public function update(Request $request, $userId)// Update user details
     {
         $user = User::findOrFail($userId);
 
@@ -66,4 +54,21 @@ class TodosController extends Controller
         return redirect()->route('todos.index', ['user' => $userId])
                          ->with('success', 'User updated successfully.');
     }
+
+    public function updateStatus(Request $request, $id)
+    {
+        $todo = Todo::find($id);
+        $todo->status = true;
+        $todo->save();
+
+        return redirect()->route('todos.index');
+    }
+
+    public function destroy($id)
+    {
+        $todo = Todo::findOrFail($id);
+        $todo->delete();
+        return redirect()->back();
+    }
+
 }

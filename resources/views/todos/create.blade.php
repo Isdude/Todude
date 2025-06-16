@@ -48,6 +48,17 @@
             outline: none;
         }
 
+        input[type="date"] {
+        cursor: pointer;
+        }
+        select {
+            cursor: pointer;
+        }
+        input[type="text"] {
+        cursor: pointer;
+        }
+
+
         button {
             width: 100%;
             background-color: #620c0c;
@@ -97,3 +108,11 @@
     </div>
 </body>
 </html>
+<script>
+    const dateInput = document.querySelector('input[type="date"]');
+
+    dateInput.addEventListener('click', function() {
+        this.showPicker && this.showPicker();
+    });
+</script>
+

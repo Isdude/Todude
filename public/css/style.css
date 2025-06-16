@@ -15,6 +15,7 @@ body {
     align-items: stretch; /* Stretch items to full height */
     max-width: 1200px; /* Max width of the container */
     margin: 0 auto; /* Center the container */
+      margin-left: 290px;
 }
 .sidebar {
   width: 290px; /* Set the width of the sidebar */
@@ -76,10 +77,16 @@ h3 {
 .todo-item {
     max-width: 600px;
     margin: 2rem auto;
+    margin-left: 290px;
     padding: 1rem 2rem;
     background-color: #fdfdfd;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+.task-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 .todo-container {
     max-width: 600px;
@@ -156,6 +163,8 @@ h3 {
 }
 .task-title {
     font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .task-info {
@@ -272,135 +281,74 @@ li {
   color: #7f8c8d;
 }
 
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  font-size: large;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
 
-/* Edit Button Style */
-/* Flex container for buttons */
-.action-buttons {
-    display: flex;
-    gap: 10px; /* space between buttons */
-    margin-top: 10px;
-}
+  .container {
+    flex-direction: column;
+    margin-left: 0;
+    padding-top: 20px;
+  }
 
-/* Reuse previous button styles */
-.btn-edit, .cancelbtn {
-    padding: 10px 20px;
-    font-size: 16px;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+    margin-bottom: 20px;
+  }
 
-.btn-edit {
-    background-color: #4CAF50;
-    color: white;
-}
+  .todo-container,
+  .todo-item {
+    margin-left: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
 
-.btn-edit:hover {
-    background-color: #45a049;
-}
+  .logout {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    justify-content: center;
+  }
 
-.cancelbtn {
-    background-color: #f44336;
-    color: white;
-}
+  .notification .badge {
+    margin-left: 10px;
+    bottom: 10px;
+    position: relative;
+  }
 
-.cancelbtn:hover {
-    background-color: #da190b;
-}
+  h1 {
+    font-size: 28px;
+  }
 
+  .sidebar-nav button {
+    font-size: 14px;
+    padding: 8px;
+  }
 
-/* Set a style for all buttons */
+  .user-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
 
-/* Extra styles for the cancel button */
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+  }
 
-/* Center the image and position the close button */
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-  position: relative;
-}
+  .user-name {
+    font-size: 14px;
+  }
 
-img.avatar {
-  width: 20%;
-  border-radius: 50%;
-}
-
-.user-edit {
-  padding: 16px;
-}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: absolute; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height:100%; /* Full height */
-  overflow: hidden;
-  padding-top: 60px;
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 3px solid #620c0c;
-  border-radius: 10px;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 35px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
-}
-
-/* Add Zoom Animation */
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
-}
-
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)}
-  to {-webkit-transform: scale(1)}
-}
-
-@keyframes animatezoom {
-  from {transform: scale(0)}
-  to {transform: scale(1)}
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  .cancelbtn {
-     width: 100%;
+  .user-email {
+    font-size: 11px;
   }
 }
+
 
 

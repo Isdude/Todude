@@ -3,48 +3,21 @@
 <head>
     <title>Todo List | Do Your List</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-        <link href="{{ asset('logo/logo.png') }}" rel="shortcut icon">
-
+    <link href="{{ asset('logo/logo.png') }}" rel="shortcut icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
     <h1>Completed</h1>
     <div class="container" role="main">
         <nav aria-label="Sidebar navigation" class="sidebar">
          <div class="sidebar-nav">
-            <a class="user-info" onclick="document.getElementById('id01').style.display='block'">
-                <div class="user-details">
-                    <h5 class="user-name">{{ Auth::user()->name }}</h5>
-                    <p class="user-email">{{ Auth::user()->email }}</p>
-                </div>
-            </a>
-
-<div id="id01" class="modal">
-        <form class="modal-content animate" action="/action_page.php" method="post">
-        <div class="imgcontainer">
-        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>        </div>
-
-        <div class="user-edit">
-        <label for="uname"><b>Username</b></label>
-        <input type="text" value="{{ Auth::user()->name }}" name="uname" required>
-
-        <div class="action-buttons">
-        <a href="{{ route('todos.edit', ['user' => Auth::user()->id]) }}" class="btn-edit">Edit</a>
-        <a class="cancelbtn" onclick="document.getElementById('id01').style.display='none'">Cancel</a>
-        </div>
+            <a href="{{ route('todos.edit', ['user' => Auth::user()->id]) }}" class="user-info">
+    <div class="user-details">
+        <h5 class="user-name">{{ Auth::user()->name }}</h5>
+        <p class="user-email">{{ Auth::user()->email }}</p>
     </div>
-</form>
-</div>
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-if (event.target == modal) {
-modal.style.display = "none";
-}
-}
-</script>
+</a>
           <a href="{{ route('todos.create') }}">
            <button aria-label="Add Task" role="listitem">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M12 6V18" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>

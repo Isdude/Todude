@@ -51,7 +51,8 @@ Route::get('/create', [TodosController::class, 'create'])->name('todos.create');
 Route::post('/create', [TodosController::class, 'store'])->name('todos.store');
 Route::get('/todos/{user}/edit', [TodosController::class, 'edit'])->name('todos.edit');
 Route::put('/todos/{user}', [TodosController::class, 'update'])->name('todos.update');
-Route::delete('/todos/{id}', [TodosController::class, 'destroy'])->name('todos.destroy');
+Route::delete('/todos/{id}', action: [TodosController::class, 'destroy'])->name('todos.destroy');
+Route::put('/todos/{id}/status', [TodosController::class, 'updateStatus'])->name('todos.status');
 
     Route::post('logout', [LoginController::class,
     'destroy'])->name('logout');
